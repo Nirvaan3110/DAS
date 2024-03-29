@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philosophy by Das</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Hide content overflow during animation */
+            background-color: #fff; /* Default background color */
+        }
+        .header-band {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            top: 0; /* Start at the top of the viewport */
+            left: 0;
+            transform: translateY(-100%); /* Start above the viewport */
+            z-index: 1000;
+            background-color: #fff; /* Default header background color */
+            transition: transform 0.5s ease; /* Add transition effect */
+        }
+        h1 {
+            margin: 0;
+            font-size: 36px;
+            opacity: 0; /* Initially hide the heading */
+            transition: opacity 0.5s ease; /* Add transition effect */
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            opacity: 0; /* Initially hide the buttons */
+            transition: opacity 0.5s ease; /* Add transition effect */
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 0 10px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        /* Apply dark mode styles */
+        body.dark-mode {
+            background: #333; /* Dark mode background color */
+        }
+        body.dark-mode .header-band {
+            background-color: #111; /* Dark mode header background color */
+        }
+        body.dark-mode h1 {
+            color: #fff; /* Dark mode text color */
+        }
+        body.dark-mode .button {
+            background-color: #555; /* Dark mode button background color */
+        }
+        body.dark-mode .button:hover {
+            background-color: #333; /* Dark mode button hover background color */
+        }
+        body.dark-mode a {
+            color: #fff; /* Dark mode link color */
+        }
+    </style>
+</head>
+<body>
+    <div class="header-band" id="header">
+        <h1>Philosophy by Das</h1>
+        <div class="button-container">
+            <!-- Dark Mode Switch Icon -->
+            <button onclick="toggleMode()" class="button"><i class="fas fa-adjust"></i></button>
+            <button class="button">About Us</button>
+            <button class="button">Join Us</button>
+            <button class="button">Credits</button>
+            <button class="button">Media</button>
+        </div>
+    </div>
+
+    <!-- Your website content here -->
+    <div style="padding-top: 200px; text-align: center;">
+        <h2>Welcome to Philosophy by Das</h2>
+        <p id="content" style="opacity: 0;">This is a website dedicated to exploring various philosophical topics.<br>Feel free to browse through our articles and join our community!</p>
+    </div>
+
+    <!-- Include Font Awesome library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    
+    <script>
+        window.onload = function() {
+            const header = document.getElementById("header");
+            const h1 = document.querySelector("h1");
+            const buttons = document.querySelector(".button-container");
+            const content = document.getElementById("content");
+            
+            // Animate header to drop in from the top
+            header.style.transform = "translateY(0)";
+            
+            // Animate heading to fade in
+            h1.style.opacity = "1";
+            
+            // Animate buttons to fade in
+            buttons.style.opacity = "1";
+
+            // Animate content to fade in
+            content.style.opacity = "1";
+        }
+
+        function toggleMode() {
+            const body = document.body;
+            body.classList.toggle("dark-mode");
+        }
+    </script>
+</body>
+</html>
