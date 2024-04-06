@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philosophy by Das - Credits</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333; /* Default heading color */
+        }
+        h2 {
+            color: #666;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        p {
+            margin: 5px 0;
+        }
+        .dark-mode-icon {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+            z-index: 9999;
+            color: #666;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+        .dark-mode h1 {
+            color: #fff; /* Heading color in dark mode */
+        }
+    </style>
+</head>
+<body>
+    <i class="fas fa-moon dark-mode-icon" id="darkModeToggle"></i>
+    
+    <h1>Credits:</h1>
+
+    <h2>Founder:</h2>
+    <p>Ronith Das</p>
+
+    <h2>Co-founders:</h2>
+    <ul>
+        <li>Uddhav</li>
+        <li>Yadhunandan</li>
+        <li>Pratyush</li>
+        <li>Nirvaan Khullar</li>
+    </ul>
+
+    <h2>Palash Cult:</h2>
+    <ul>
+        <li>Shreyansh</li>
+        <li>Chaitanya</li>
+        <li>Toshaan</li>
+        <li>Ashutosh</li>
+        <li>Yashveer</li>
+        <li>Yogya</li>
+    </ul>
+
+    <h2>Technical Credits:</h2>
+    <p>Nirvaan Khullar (Website design & technical assistance)</p>
+
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        let isDarkMode = false;
+
+        darkModeToggle.addEventListener('click', () => {
+            isDarkMode = !isDarkMode;
+            document.body.classList.toggle('dark-mode', isDarkMode);
+            // Change icon based on dark mode state
+            darkModeToggle.classList.toggle('fa-sun', isDarkMode);
+            darkModeToggle.classList.toggle('fa-moon', !isDarkMode);
+        });
+    </script>
+</body>
+</html>
